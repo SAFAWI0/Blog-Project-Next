@@ -1,0 +1,46 @@
+.card {
+  animation: ani 1s;
+}
+
+.card .imag {
+  height: 200px;
+  background-color: #eee;
+  position: relative;
+}
+.card .title {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  animation: ani 1.5s;
+}
+.card .supT {
+  margin-top: 4px;
+  color: #666666;
+  animation: ani 2s;
+}
+.card .linspa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.card .linspa a {
+  text-decoration: none;
+  color: #0000ff;
+}
+.card .linspa span {
+  color: #666666;
+}
+.card .imag image {
+  object-fit: cover;
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+    transform: rotateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}

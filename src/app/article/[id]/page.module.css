@@ -1,0 +1,63 @@
+.title {
+  margin-top: 50px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+.content p {
+  color: #666666;
+}
+.content span {
+  color: #666666;
+}
+
+.cover {
+  height: 250px;
+  background-color: #eee;
+  margin-top: 25px;
+  position: relative;
+  animation: ani 1s;
+}
+
+.cover img {
+  object-fit: cover;
+}
+.center {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  animation: ani 2s;
+}
+.center h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 430px) {
+  .title h2 {
+   margin-left: 8px;
+   
+  }
+  .content p{
+   margin-left: 8px;
+  }
+  .content span{
+   margin-right: 8px;
+  }
+  .center{
+   margin-left: 8px;
+   margin-right: 8px;
+  }
+}

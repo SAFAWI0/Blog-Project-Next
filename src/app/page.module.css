@@ -1,0 +1,91 @@
+.home .cover {
+  height: 500px;
+  background-color: #eee;
+  position: relative;
+}
+.home .cover .inCover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: #00000047;
+}
+.home .cover .inCover .title {
+  color: white;
+  margin-top: 250px;
+}
+.home .cover .inCover .title p {
+  margin-top: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px 30px;
+  margin-top: -105px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.loader {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  color: #fff;
+  left: -100px;
+  box-sizing: border-box;
+  animation: shadowRolling 2s linear infinite;
+  margin-bottom: 1000px;
+}
+
+@keyframes shadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  12% {
+    box-shadow: 100px 0 black, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 110px 0 black, 100px 0 black, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  36% {
+    box-shadow: 120px 0 black, 110px 0 black, 100px 0 black,
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 130px 0 black, 120px 0 black, 110px 0 black, 100px 0 black;
+  }
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 black, 120px 0 black,
+      110px 0 black;
+  }
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 black, 120px 0 black;
+  }
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 white;
+  }
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .home .cover .inCover .title {
+    margin-left: 16px;
+  }
+}
