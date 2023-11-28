@@ -13,7 +13,7 @@ import { Pagination } from "antd";
 export default function Home() {
   const [list, setList] = useState([]);
   const [load, setLoad] = useState([true]);
-
+  const img ="https://picsum.photos/800/200"
   const getData = () => {
     setLoad(true);
     fetch("https://api.slingacademy.com/v1/sample-data/blog-posts?limit=99")
@@ -44,6 +44,7 @@ export default function Home() {
     <main className={styles.home}>
       <Header />
       <div className={styles.cover}>
+      <Image src={img} fill={true}/>
         <div className={styles.inCover}>
           <Container>
             <div className={styles.title}>
