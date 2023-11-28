@@ -40,6 +40,11 @@
   animation: shadowRolling 2s linear infinite;
   margin-bottom: 1000px;
 }
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @keyframes shadowRolling {
   0% {

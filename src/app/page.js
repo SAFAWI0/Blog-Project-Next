@@ -7,6 +7,8 @@ import { Header } from "../components/header/header";
 import { Card } from "../components/card/card";
 import { Footer } from "../components/footer/footer";
 import { useEffect, useState } from "react";
+import React from "react";
+import { Pagination } from "antd";
 
 export default function Home() {
   const [list, setList] = useState([]);
@@ -14,16 +16,30 @@ export default function Home() {
 
   const getData = () => {
     setLoad(true);
-    fetch("https://api.slingacademy.com/v1/sample-data/blog-posts")
+    fetch("https://api.slingacademy.com/v1/sample-data/blog-posts?limit=99")
       .then((res) => res.json())
       .then((data) => {
         setList(data.blogs);
         setLoad(false);
       });
   };
+
+  //pagination
+  const items = 9;
+  const [curr, setCurr] = useState(1);
+  const nPaga = Math.ceil(list.length / items);
+  const startIndex = (curr - 1) * items;
+  const endIndex = startIndex + items;
+  const dataPage = list.slice(startIndex, endIndex);
+
   useEffect(() => {
     getData();
   }, []);
+
+  const handleChange = (page) => {
+    setCurr(page);
+  };
+
   return (
     <main className={styles.home}>
       <Header />
@@ -40,10 +56,19 @@ export default function Home() {
       <Container>
         {load && <span class={styles.loader}></span>}
         <div className={styles.grid}>
-          {list.map((blog, i) => (
+          {dataPage.map((blog, i) => (
             <Card key={i} blog={blog} />
           ))}
         </div>
+        <Pagination
+          className={styles.pagination}
+          defaultCurrent={1}
+          total={110}
+          count={nPaga}
+          page={curr}
+          onChange={handleChange}
+        />
+        ;
       </Container>
       <Footer />
     </main>
