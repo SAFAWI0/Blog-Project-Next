@@ -9,11 +9,12 @@ import { Footer } from "../components/footer/footer";
 import { useEffect, useState } from "react";
 import React from "react";
 import { Pagination } from "antd";
+import { Banner } from "../components/Banner/banner";
 
 export default function Home() {
   const [list, setList] = useState([]);
   const [load, setLoad] = useState([true]);
-  const img ="https://picsum.photos/800/200"
+  // const img ="https://picsum.photos/800/200"
   const getData = () => {
     setLoad(true);
     fetch("https://api.slingacademy.com/v1/sample-data/blog-posts?limit=99")
@@ -44,7 +45,8 @@ export default function Home() {
     <main className={styles.home}>
       <Header />
       <div className={styles.cover}>
-      <Image src={img} fill={true}/>
+      {/* <Image src={img} fill={true}/> */}
+      <Banner image={"https://picsum.photos/800/200"}/>
         <div className={styles.inCover}>
           <Container>
             <div className={styles.title}>

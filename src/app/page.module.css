@@ -1,6 +1,4 @@
 .home .cover {
-  height: 500px;
-  background-color: #eee;
   position: relative;
 }
 .home .cover .inCover {
@@ -40,7 +38,7 @@
   animation: shadowRolling 2s linear infinite;
   margin-bottom: 1000px;
 }
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   align-items: center;
